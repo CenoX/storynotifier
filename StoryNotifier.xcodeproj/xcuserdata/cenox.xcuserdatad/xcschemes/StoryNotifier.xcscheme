@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C0F8DA651E14B288001C6EAC"
-               BuildableName = "StoryNotifier.app"
+               BuildableName = "Story Notifier.app"
                BlueprintName = "StoryNotifier"
                ReferencedContainer = "container:StoryNotifier.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C0F8DA651E14B288001C6EAC"
-            BuildableName = "StoryNotifier.app"
+            BuildableName = "Story Notifier.app"
             BlueprintName = "StoryNotifier"
             ReferencedContainer = "container:StoryNotifier.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C0F8DA651E14B288001C6EAC"
-            BuildableName = "StoryNotifier.app"
+            BuildableName = "Story Notifier.app"
             BlueprintName = "StoryNotifier"
             ReferencedContainer = "container:StoryNotifier.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C0F8DA651E14B288001C6EAC"
-            BuildableName = "StoryNotifier.app"
+            BuildableName = "Story Notifier.app"
             BlueprintName = "StoryNotifier"
             ReferencedContainer = "container:StoryNotifier.xcodeproj">
          </BuildableReference>
