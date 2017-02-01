@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		452290AA1F6727860D0A3AA7 /* Pods_StoryNotifier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98088A5EFCAA51738EB93D79 /* Pods_StoryNotifier.framework */; };
 		C027D8151E419EF100FF3433 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = C027D8141E419EF100FF3433 /* dsa_pub.pem */; };
-		C027D81A1E41D89500FF3433 /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C027D81C1E41D89500FF3433 /* localizable.strings */; };
 		C0B35CDB1E26ACB100220E89 /* structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B35CDA1E26ACB100220E89 /* structs.swift */; };
 		C0B35CE51E2713EA00220E89 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B35CE31E2713EA00220E89 /* StatusViewController.swift */; };
 		C0B35CE61E2713EA00220E89 /* StatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0B35CE41E2713EA00220E89 /* StatusViewController.xib */; };
@@ -48,8 +47,6 @@
 		98088A5EFCAA51738EB93D79 /* Pods_StoryNotifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoryNotifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8D7F33272982D3017CD70B /* Pods-StoryNotifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryNotifier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StoryNotifier/Pods-StoryNotifier.debug.xcconfig"; sourceTree = "<group>"; };
 		C027D8141E419EF100FF3433 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
-		C027D81B1E41D89500FF3433 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localizable.strings; sourceTree = "<group>"; };
-		C027D81D1E41D89E00FF3433 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/localizable.strings; sourceTree = "<group>"; };
 		C0B35CDA1E26ACB100220E89 /* structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = structs.swift; sourceTree = "<group>"; };
 		C0B35CE31E2713EA00220E89 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		C0B35CE41E2713EA00220E89 /* StatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusViewController.xib; sourceTree = "<group>"; };
@@ -160,7 +157,6 @@
 				C0B35CE41E2713EA00220E89 /* StatusViewController.xib */,
 				C0F8DA6D1E14B288001C6EAC /* Assets.xcassets */,
 				C0F8DA6F1E14B288001C6EAC /* Main.storyboard */,
-				C027D81C1E41D89500FF3433 /* localizable.strings */,
 				C027D8161E41D78700FF3433 /* Lib */,
 				C027D8171E41D79D00FF3433 /* Support files */,
 			);
@@ -216,7 +212,6 @@
 			knownRegions = (
 				en,
 				Base,
-				ko,
 			);
 			mainGroup = C0F8DA5D1E14B288001C6EAC;
 			productRefGroup = C0F8DA671E14B288001C6EAC /* Products */;
@@ -252,7 +247,6 @@
 				C027D8151E419EF100FF3433 /* dsa_pub.pem in Resources */,
 				C0B35CE61E2713EA00220E89 /* StatusViewController.xib in Resources */,
 				C0B35D051E27248100220E89 /* relaunch in Resources */,
-				C027D81A1E41D89500FF3433 /* localizable.strings in Resources */,
 				C0F8DA6E1E14B288001C6EAC /* Assets.xcassets in Resources */,
 				C0F8DA711E14B288001C6EAC /* Main.storyboard in Resources */,
 			);
@@ -335,15 +329,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C027D81C1E41D89500FF3433 /* localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C027D81B1E41D89500FF3433 /* en */,
-				C027D81D1E41D89E00FF3433 /* ko */,
-			);
-			name = localizable.strings;
-			sourceTree = "<group>";
-		};
 		C0F8DA6F1E14B288001C6EAC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

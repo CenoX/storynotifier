@@ -90,8 +90,8 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
             self.processRequest(with: data)
         } else {
             let a = NSAlert()
-            a.messageText = NSLocalizedString("invaild_email", comment: "")
-            a.addButton(withTitle: NSLocalizedString("ok", comment: ""))
+            a.messageText = "올바른 이메일 형식으로 입력하세요."
+            a.addButton(withTitle: "확인")
             a.alertStyle = NSAlertStyle.warning
             a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
                 if modalResponse == NSAlertFirstButtonReturn {
@@ -148,11 +148,11 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
     private func loginFailed(dict: NSDictionary) {
         DispatchQueue.main.async {
             let a = NSAlert()
-            a.messageText = NSLocalizedString("login_failed", comment: "")
+            a.messageText = "로그인 실패"
             let status = dict.object(forKey: "status") as! Int
             let message = dict.object(forKey: "message") as! String
-            a.informativeText = "\(NSLocalizedString("errorCode", comment: "")): \(status), \(NSLocalizedString("message", comment: "")): \(message)\n"
-            a.addButton(withTitle: NSLocalizedString("ok", comment: ""))
+            a.informativeText = "오류코드: \(status), 메세지: \(message)\n"
+            a.addButton(withTitle: "확인")
             a.alertStyle = NSAlertStyle.warning
             a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
                 if modalResponse == NSAlertFirstButtonReturn {
@@ -169,17 +169,17 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
                 self.view.window?.close()
                 let notification = NSUserNotification()
                 notification.title = "Story Notifier"
-                notification.subtitle = NSLocalizedString("auto_login_success", comment: "")
-                notification.informativeText = NSLocalizedString("auto_login_message", comment: "")
+                notification.subtitle = "자동 로그인 성공"
+                notification.informativeText = "자동 로그인이 활성화되어 로그인되었습니다."
                 notification.soundName = NSUserNotificationDefaultSoundName
                 
                 NSUserNotificationCenter.default.deliver(notification)
             } else {
                 let a = NSAlert()
-                a.messageText = NSLocalizedString("login_success", comment: "")
-                a.informativeText = NSLocalizedString("ask_autoLogin_enable", comment: "")
-                a.addButton(withTitle: NSLocalizedString("activate", comment: ""))
-                a.addButton(withTitle: NSLocalizedString("noActivate", comment: ""))
+                a.messageText = "로그인 성공"
+                a.informativeText = "자동 로그인을 활성화할까요?"
+                a.addButton(withTitle: "활성화")
+                a.addButton(withTitle: "하지 않음")
                 a.alertStyle = NSAlertStyle.warning
                 a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
                     if modalResponse == NSAlertFirstButtonReturn {
@@ -237,7 +237,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
         request.setValue("story.kakao.com", forHTTPHeaderField: "Host")
         request.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:52.0) Gecko/20100101 Firefox/52.0", forHTTPHeaderField: "User-Agent")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue(NSLocalizedString("lang", comment: ""), forHTTPHeaderField: "Accept-Language")
+        request.setValue("ko", forHTTPHeaderField: "Accept-Language")
         request.setValue("keep-alive", forHTTPHeaderField: "Connection")
         request.setValue("31", forHTTPHeaderField: "X-Kakao-ApiLevel")
         request.setValue("web:-;-;-", forHTTPHeaderField: "X-Kakao-DeviceInfo")
@@ -294,7 +294,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
     private func makeNotification() {
         let kNotification = self.notifications.last!
         let notification = NSUserNotification()
-        notification.title = NSLocalizedString("story", comment: "")
+        notification.title = "카카오스토리"
         let message = kNotification.message
         if let content = kNotification.content {
             notification.informativeText = content
@@ -304,7 +304,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
         notification.soundName = NSUserNotificationDefaultSoundName
         notification.setValue(true, forKey: "_showsButtons")
         notification.hasActionButton = true
-        notification.actionButtonTitle = NSLocalizedString("open", comment: "")
+        notification.actionButtonTitle = "보기"
         
         NSUserNotificationCenter.default.deliver(notification)
         NSUserNotificationCenter.default.delegate = self
