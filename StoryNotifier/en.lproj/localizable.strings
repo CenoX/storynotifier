@@ -5,3 +5,23 @@
   Created by CenoX on 2017. 2. 1..
   Copyright © 2017년 Team Vanilla. All rights reserved.
 */
+
+"story" = "KakaoStory";
+"open" = "View";
+
+"lang" = "en";
+
+"ok" = "OK";
+
+"invaild_email" = "Please insert a valid email format.";
+"login_failed" = "Login failed.";
+"errorCode" = "Error code";
+"message" = "Message";
+
+"auto_login_success" = "Auto login success";
+"auto_login_message" = "Login success via auto login.";
+
+"login_success" = "Login success";
+"ask_autoLogin_enable" = "Do you want to enable auto login?";
+"activate" = "Activate";
+"noActivate" = "Don't";
