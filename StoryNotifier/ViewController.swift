@@ -8,6 +8,7 @@
 
 import Cocoa
 import Sparkle
+import WebKit
 
 extension String {
     func convertFromHTML() -> String {
@@ -34,9 +35,10 @@ extension String {
     }
 }
 
-class ViewController: NSViewController, NSUserNotificationCenterDelegate {
+class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFrameLoadDelegate, WebPolicyDelegate {
     
     let loginURL = URL(string: "https://accounts.kakao.com/weblogin/authenticate")!
+    let webViewURL = URL(string: "https://accounts.kakao.com/weblogin/main_captcha?continue=https%3A%2F%2Fstory.kakao.com")!
     let notificationURL = URL(string: "https://story.kakao.com/a/notifications")!
     
     private var cookies = [HTTPCookie]()
@@ -49,23 +51,17 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
     
     private let encryptKey = "cenoxStoryNotifierProject"
     
-    @IBOutlet weak private var idTextField: NSTextField!
-    @IBOutlet weak private var passwordTextField: NSTextField!
+    @IBOutlet var webView: WebView!
     @IBOutlet weak private var loginButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        if UserDefaults.standard.bool(forKey: "autoLogin") {
-            do {
-                let encryptedData = try Data(contentsOf: Lib.getURLWith(FileName: "autoLoginData"))
-                let decrypted = Crypto.aes256Decrypt(withKey: self.encryptKey, data: encryptedData)
-                print("START SESSION")
-                self.processRequest(with: decrypted)
-            } catch let error {
-                print(error.localizedDescription)
-            }
+        webView.frameLoadDelegate = self
+        webView.policyDelegate = self
+        DispatchQueue.main.async {
+            self.webView.mainFrame.load(URLRequest(url: self.webViewURL))
         }
     }
     
@@ -76,127 +72,19 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
     }
 
     @IBAction private func login(sender: NSButton) {
-        print(idTextField.stringValue, passwordTextField.stringValue)
-        if idTextField.stringValue.isValidEmail() {
-            let dataString = "email=\(idTextField.stringValue)&password=\(passwordTextField.stringValue)"
-            let data = dataString.data(using: .utf8)
-            let encryptedData = Crypto.aes256Encrypt(withKey: encryptKey, data: data)
-            do {
-                try encryptedData?.write(to: Lib.getURLWith(FileName: "autoLoginData"))
-                print("ENCRYPED DATA WROTE.")
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            self.processRequest(with: data)
-        } else {
-            let a = NSAlert()
-            a.messageText = "올바른 이메일 형식으로 입력하세요."
-            a.addButton(withTitle: "확인")
-            a.alertStyle = NSAlertStyle.warning
-            a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
-                if modalResponse == NSAlertFirstButtonReturn {
-                    print("UserDefaults autoLogin -> false, Login Failed.")
-                    UserDefaults.standard.set(false, forKey: "autoLogin")
-                    UserDefaults.standard.synchronize()
-                }
-            })
-        }
-    }
-    
-    private func processRequest(with data: Data?) {
-        var request = URLRequest(url: self.loginURL)
-        request.httpMethod = "POST"
-        request.httpBody = data
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.addValue("https://story.kakao.com/s/login", forHTTPHeaderField: "Referer")
-        request.addValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:52.0) Gecko/20100101 Firefox/52.0", forHTTPHeaderField: "user-agent")
-        request.addValue("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", forHTTPHeaderField: "")
-        request.addValue("Accept-Language", forHTTPHeaderField: "ko-kr,ko;q=0.8,en-us;q=0.5,en;q=0.3")
-        request.addValue("accounts.kakao.com", forHTTPHeaderField: "Host")
-        request.addValue("1", forHTTPHeaderField: "Upgrade-Insecure-Requests")
+        print(webView.mainFrameURL)
         
-        let session = URLSession.shared.dataTask(with: request) { data, response, error in
-            
-            if let _data = data {
-                if let str = String(data: _data, encoding: .utf8) {
-                    let bodyString = str.components(separatedBy: "<body>")[1].components(separatedBy: "</body>")[0].convertFromHTML()
-                    print(bodyString)
-                    if let jsonData = try? JSONSerialization.jsonObject(with: bodyString.data(using: .utf8)!, options: []) {
-                        print(jsonData)
-                        if let status = (jsonData as! NSDictionary).object(forKey: "status") as? Int {
-                            if status == 0 {
-                                print("LOGIN SUCCESS")
-                                self.loginSuccess()
-                            } else {
-                                print("LOGIN FAILED")
-                                self.loginFailed(dict: jsonData as! NSDictionary)
-                            }
-                        } else {
-                            print("CANNOT LOGIN")
-                        }
-                    } else {
-                        print("Unable to make JSON Object")
-                    }
-                }
-            } else {
-                print("Cannot wrap optinal data.")
-            }
-        }
-        session.resume()
     }
     
-    private func loginFailed(dict: NSDictionary) {
-        DispatchQueue.main.async {
-            let a = NSAlert()
-            a.messageText = "로그인 실패"
-            let status = dict.object(forKey: "status") as! Int
-            let message = dict.object(forKey: "message") as! String
-            a.informativeText = "오류코드: \(status), 메세지: \(message)\n"
-            a.addButton(withTitle: "확인")
-            a.alertStyle = NSAlertStyle.warning
-            a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
-                if modalResponse == NSAlertFirstButtonReturn {
-                    print("UserDefaults autoLogin -> false, Login Failed.")
-                    UserDefaults.standard.set(false, forKey: "autoLogin")
-                    UserDefaults.standard.synchronize()
-                }
-            })
-        }
+    func webView(_ sender: WebView!, didStartProvisionalLoadFor frame: WebFrame!) {
+        print(webView.mainFrameURL)
     }
-    private func loginSuccess() {
-        DispatchQueue.main.async {
-            if UserDefaults.standard.bool(forKey: "autoLogin") {
-                self.view.window?.close()
-                let notification = NSUserNotification()
-                notification.title = "Story Notifier"
-                notification.subtitle = "자동 로그인 성공"
-                notification.informativeText = "자동 로그인이 활성화되어 로그인되었습니다."
-                notification.soundName = NSUserNotificationDefaultSoundName
-                
-                NSUserNotificationCenter.default.deliver(notification)
-            } else {
-                let a = NSAlert()
-                a.messageText = "로그인 성공"
-                a.informativeText = "자동 로그인을 활성화할까요?"
-                a.addButton(withTitle: "활성화")
-                a.addButton(withTitle: "하지 않음")
-                a.alertStyle = NSAlertStyle.warning
-                a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
-                    if modalResponse == NSAlertFirstButtonReturn {
-                        print("UserDefaults autoLogin -> true")
-                        UserDefaults.standard.set(true, forKey: "autoLogin")
-                        UserDefaults.standard.synchronize()
-                        self.view.window?.close()
-                    } else {
-                        print("UserDefaults autoLogin -> false")
-                        UserDefaults.standard.set(false, forKey: "autoLogin")
-                        UserDefaults.standard.synchronize()
-                        self.view.window?.close()
-                    }
-                })
-            }
+    
+    func webView(_ sender: WebView!, didFinishLoadFor frame: WebFrame!) {
+        if webView.mainFrameURL == "https://story.kakao.com/" {
+            print(webView.mainFrameURL)
+            self.view.window?.close()
             self.startReceiveAlert()
-            
         }
     }
     
