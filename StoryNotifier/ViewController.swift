@@ -109,9 +109,10 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
         request.httpBody = data
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.addValue("https://story.kakao.com/s/login", forHTTPHeaderField: "Referer")
-        request.addValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:52.0) Gecko/20100101 Firefox/52.0", forHTTPHeaderField: "user-agent")
+        request.addValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, like Gecko) Version/10.0.3 Safari/602.4.8", forHTTPHeaderField: "user-agent")
         request.addValue("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", forHTTPHeaderField: "")
         request.addValue("Accept-Language", forHTTPHeaderField: "ko-kr,ko;q=0.8,en-us;q=0.5,en;q=0.3")
+        request.setValue("web:d;-;-", forHTTPHeaderField: "X-Kakao-DeviceInfo")
         request.addValue("accounts.kakao.com", forHTTPHeaderField: "Host")
         request.addValue("1", forHTTPHeaderField: "Upgrade-Insecure-Requests")
         
@@ -181,22 +182,26 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
                 a.addButton(withTitle: "활성화")
                 a.addButton(withTitle: "하지 않음")
                 a.alertStyle = NSAlertStyle.warning
-                a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
+                if a.runModal() == NSAlertFirstButtonReturn {
+                    print("UserDefaults autoLogin -> true")
+                    UserDefaults.standard.set(true, forKey: "autoLogin")
+                    UserDefaults.standard.synchronize()
+                    self.view.window?.close()
+                } else {
+                    print("UserDefaults autoLogin -> false")
+                    UserDefaults.standard.set(false, forKey: "autoLogin")
+                    UserDefaults.standard.synchronize()
+                    self.view.window?.close()
+                }
+                /*a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
                     if modalResponse == NSAlertFirstButtonReturn {
-                        print("UserDefaults autoLogin -> true")
-                        UserDefaults.standard.set(true, forKey: "autoLogin")
-                        UserDefaults.standard.synchronize()
-                        self.view.window?.close()
+                        
                     } else {
-                        print("UserDefaults autoLogin -> false")
-                        UserDefaults.standard.set(false, forKey: "autoLogin")
-                        UserDefaults.standard.synchronize()
-                        self.view.window?.close()
+                        
                     }
-                })
+                })*/
             }
             self.startReceiveAlert()
-            
         }
     }
     
@@ -235,12 +240,12 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
         var request = URLRequest(url: URL(string: "https://story.kakao.com/a/notifications")!)
         request.httpMethod = "GET"
         request.setValue("story.kakao.com", forHTTPHeaderField: "Host")
-        request.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:52.0) Gecko/20100101 Firefox/52.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, like Gecko) Version/10.0.3 Safari/602.4.8", forHTTPHeaderField: "User-Agent")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("ko", forHTTPHeaderField: "Accept-Language")
         request.setValue("keep-alive", forHTTPHeaderField: "Connection")
-        request.setValue("31", forHTTPHeaderField: "X-Kakao-ApiLevel")
-        request.setValue("web:-;-;-", forHTTPHeaderField: "X-Kakao-DeviceInfo")
+        request.setValue("34", forHTTPHeaderField: "X-Kakao-ApiLevel")
+        request.setValue("web:d;-;-", forHTTPHeaderField: "X-Kakao-DeviceInfo")
         request.setValue("XMLHttpRequest", forHTTPHeaderField: "X-Requested-With")
         request.setValue("https://story.kakao.com", forHTTPHeaderField: "Referer")
         self.notifications.removeAll()
