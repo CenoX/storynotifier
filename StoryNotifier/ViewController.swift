@@ -109,7 +109,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
         request.httpBody = data
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.addValue("https://story.kakao.com/s/login", forHTTPHeaderField: "Referer")
-        request.addValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, like Gecko) Version/10.0.3 Safari/602.4.8", forHTTPHeaderField: "user-agent")
+        request.addValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/604.5.6 (KHTML, like Gecko) Version/11.0.3 Safari/604.5.6", forHTTPHeaderField: "user-agent")
         request.addValue("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", forHTTPHeaderField: "")
         request.addValue("Accept-Language", forHTTPHeaderField: "ko-kr,ko;q=0.8,en-us;q=0.5,en;q=0.3")
         request.setValue("web:d;-;-", forHTTPHeaderField: "X-Kakao-DeviceInfo")
@@ -240,11 +240,11 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
         var request = URLRequest(url: URL(string: "https://story.kakao.com/a/notifications")!)
         request.httpMethod = "GET"
         request.setValue("story.kakao.com", forHTTPHeaderField: "Host")
-        request.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, like Gecko) Version/10.0.3 Safari/602.4.8", forHTTPHeaderField: "User-Agent")
+        request.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/604.5.6 (KHTML, like Gecko) Version/11.0.3 Safari/604.5.6", forHTTPHeaderField: "User-Agent")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("ko", forHTTPHeaderField: "Accept-Language")
         request.setValue("keep-alive", forHTTPHeaderField: "Connection")
-        request.setValue("34", forHTTPHeaderField: "X-Kakao-ApiLevel")
+        request.setValue("41", forHTTPHeaderField: "X-Kakao-ApiLevel")
         request.setValue("web:d;-;-", forHTTPHeaderField: "X-Kakao-DeviceInfo")
         request.setValue("XMLHttpRequest", forHTTPHeaderField: "X-Requested-With")
         request.setValue("https://story.kakao.com", forHTTPHeaderField: "Referer")
