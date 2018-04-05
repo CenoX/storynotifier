@@ -14,9 +14,9 @@ extension String {
         guard let encodedData = self.data(using: .utf8) else {
             return self
         }
-        let attributedOptions: [String : Any] = [
-            NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-            NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue
+        let attributedOptions: [NSAttributedString.DocumentReadingOptionKey : Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
         ]
         do {
             let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
@@ -92,9 +92,9 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
             let a = NSAlert()
             a.messageText = "올바른 이메일 형식으로 입력하세요."
             a.addButton(withTitle: "확인")
-            a.alertStyle = NSAlertStyle.warning
+            a.alertStyle = .warning
             a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
-                if modalResponse == NSAlertFirstButtonReturn {
+                if modalResponse == .alertFirstButtonReturn {
                     print("UserDefaults autoLogin -> false, Login Failed.")
                     UserDefaults.standard.set(false, forKey: "autoLogin")
                     UserDefaults.standard.synchronize()
@@ -154,9 +154,9 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
             let message = dict.object(forKey: "message") as! String
             a.informativeText = "오류코드: \(status), 메세지: \(message)\n"
             a.addButton(withTitle: "확인")
-            a.alertStyle = NSAlertStyle.warning
+            a.alertStyle = .warning
             a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
-                if modalResponse == NSAlertFirstButtonReturn {
+                if modalResponse == .alertFirstButtonReturn {
                     print("UserDefaults autoLogin -> false, Login Failed.")
                     UserDefaults.standard.set(false, forKey: "autoLogin")
                     UserDefaults.standard.synchronize()
@@ -181,8 +181,8 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
                 a.informativeText = "자동 로그인을 활성화할까요?"
                 a.addButton(withTitle: "활성화")
                 a.addButton(withTitle: "하지 않음")
-                a.alertStyle = NSAlertStyle.warning
-                if a.runModal() == NSAlertFirstButtonReturn {
+                a.alertStyle = .warning
+                if a.runModal() == .alertFirstButtonReturn {
                     print("UserDefaults autoLogin -> true")
                     UserDefaults.standard.set(true, forKey: "autoLogin")
                     UserDefaults.standard.synchronize()
@@ -236,7 +236,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
         self.alertTimer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(ViewController.receiveAlert), userInfo: nil, repeats: true)
     }
     
-    func receiveAlert() {
+    @objc func receiveAlert() {
         var request = URLRequest(url: URL(string: "https://story.kakao.com/a/notifications")!)
         request.httpMethod = "GET"
         request.setValue("story.kakao.com", forHTTPHeaderField: "Host")
@@ -319,8 +319,8 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: NSUserNotificationCenter, didActivate notification: NSUserNotification) {
         let component = notification.userInfo!["URLComponent"] as! String
         let storyURL = URL(string: "https://story.kakao.com/\(component)")
-        print("NotiURL: \(storyURL)")
-        if let url = storyURL, NSWorkspace.shared().open(url) {
+        print("NotiURL: \(storyURL as Any)")
+        if let url = storyURL, NSWorkspace.shared.open(url) {
             print("default browser was successfully opened")
         }
     }

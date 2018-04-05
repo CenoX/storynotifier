@@ -31,17 +31,17 @@ class StatusViewController: NSViewController {
         a.informativeText = "설정을 반영하기 위해 앱을 재시작 하여야합니다.\n계속하시겠습니까?"
         a.addButton(withTitle: "재시작")
         a.addButton(withTitle: "취소")
-        a.alertStyle = NSAlertStyle.warning
+        a.alertStyle = .warning
         
         a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
-            if modalResponse == NSAlertFirstButtonReturn {
-                NSApplication.shared().relaunch(sender)
+            if modalResponse == .alertFirstButtonReturn {
+                NSApplication.shared.relaunch(sender)
             }
         })
     }
     
     @IBAction private func quitApp(_ sender: AnyObject) {
-        NSApplication.shared().terminate(sender)
+        NSApplication.shared.terminate(sender)
     }
     
     @IBAction private func logout(_sender: NSButton) {
@@ -50,10 +50,10 @@ class StatusViewController: NSViewController {
         a.informativeText = "모든 어플리케이션의 설정이 지워지며, 다시 로그인하셔야합니다."
         a.addButton(withTitle: "로그아웃")
         a.addButton(withTitle: "취소")
-        a.alertStyle = NSAlertStyle.warning
+        a.alertStyle = .warning
         
         a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
-            if modalResponse == NSAlertFirstButtonReturn {
+            if modalResponse == .alertFirstButtonReturn {
                 if let bundle = Bundle.main.bundleIdentifier {
                     UserDefaults.standard.removePersistentDomain(forName: bundle)
                     UserDefaults.standard.synchronize()
@@ -81,7 +81,7 @@ class StatusViewController: NSViewController {
                     
                     NSUserNotificationCenter.default.deliver(notification)
                     
-                    NSApplication.shared().terminate(nil)
+                    NSApplication.shared.terminate(nil)
                 }
             }
         }
@@ -99,11 +99,11 @@ class StatusViewController: NSViewController {
         let tag = UserDefaults.standard.integer(forKey: "frequency")
         switch tag {
         case 0:
-            self.freq.state = 1
+            self.freq.state = NSControl.StateValue(rawValue: 1)
         case 1:
-            self.norm.state = 1
+            self.norm.state = NSControl.StateValue(rawValue: 1)
         case 2:
-            self.long.state = 1
+            self.long.state = NSControl.StateValue(rawValue: 1)
         default:
             break
         }

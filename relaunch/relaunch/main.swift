@@ -34,7 +34,7 @@ autoreleasepool {
         c += 1
     }
     let parentPID = Int32(CommandLine.arguments[1])
-    print("parentPID: \(parentPID)")
+    print("parentPID: \(parentPID ?? 0)")
     
     if parentPID == nil {
         fatalError("FUCKING PID IS NIL!!!!")
@@ -60,7 +60,7 @@ autoreleasepool {
         // relaunch
         print("Relaunching")
         do {
-            try NSWorkspace.shared().launchApplication(at: bundleURL, options: .newInstance, configuration: [:])
+            try NSWorkspace.shared.launchApplication(at: bundleURL, options: .newInstance, configuration: [:])
         } catch let error as NSError {
             print(error.localizedDescription)
         }
