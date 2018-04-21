@@ -202,7 +202,6 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
     func userNotificationCenter(_ center: NSUserNotificationCenter, didActivate notification: NSUserNotification) {
         let component = notification.userInfo!["URLComponent"] as! String
         let storyURL = URL(string: "https://story.kakao.com/\(component)")
-        print("NotiURL: \(storyURL)")
         if let url = storyURL, NSWorkspace.shared().open(url) {
             print("default browser was successfully opened")
         }
