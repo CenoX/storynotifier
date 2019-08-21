@@ -15,9 +15,9 @@ extension String {
         guard let encodedData = self.data(using: .utf8) else {
             return self
         }
-        let attributedOptions: [String : Any] = [
-            NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-            NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue
+        let attributedOptions: [NSAttributedString.DocumentReadingOptionKey : Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
         ]
         do {
             let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
@@ -119,7 +119,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
         self.alertTimer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(ViewController.receiveAlert), userInfo: nil, repeats: true)
     }
     
-    func receiveAlert() {
+    @objc func receiveAlert() {
         var request = URLRequest(url: URL(string: "https://story.kakao.com/a/notifications")!)
         request.httpMethod = "GET"
         request.setValue("story.kakao.com", forHTTPHeaderField: "Host")
@@ -202,7 +202,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
     func userNotificationCenter(_ center: NSUserNotificationCenter, didActivate notification: NSUserNotification) {
         let component = notification.userInfo!["URLComponent"] as! String
         let storyURL = URL(string: "https://story.kakao.com/\(component)")
-        if let url = storyURL, NSWorkspace.shared().open(url) {
+        if let url = storyURL, NSWorkspace.shared.open(url) {
             print("default browser was successfully opened")
         }
     }
