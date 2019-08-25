@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		452290AA1F6727860D0A3AA7 /* Pods_StoryNotifier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98088A5EFCAA51738EB93D79 /* Pods_StoryNotifier.framework */; };
+		C0044AD02312E40300E21CD3 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0044ACF2312E40300E21CD3 /* NotificationModel.swift */; };
 		C027D8151E419EF100FF3433 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = C027D8141E419EF100FF3433 /* dsa_pub.pem */; };
 		C052D67E208ACEE500E9777B /* relaunch in Resources */ = {isa = PBXBuildFile; fileRef = C052D67D208ACEE500E9777B /* relaunch */; };
 		C0B35CDB1E26ACB100220E89 /* structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B35CDA1E26ACB100220E89 /* structs.swift */; };
@@ -39,6 +40,7 @@
 		7ECE26C004C25E79C0A5EFCD /* Pods-StoryNotifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryNotifier.release.xcconfig"; path = "Pods/Target Support Files/Pods-StoryNotifier/Pods-StoryNotifier.release.xcconfig"; sourceTree = "<group>"; };
 		98088A5EFCAA51738EB93D79 /* Pods_StoryNotifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoryNotifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8D7F33272982D3017CD70B /* Pods-StoryNotifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryNotifier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StoryNotifier/Pods-StoryNotifier.debug.xcconfig"; sourceTree = "<group>"; };
+		C0044ACF2312E40300E21CD3 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		C027D8141E419EF100FF3433 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		C052D67D208ACEE500E9777B /* relaunch */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = relaunch; sourceTree = "<group>"; };
 		C0B35CDA1E26ACB100220E89 /* structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = structs.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				C0F8DA691E14B288001C6EAC /* AppDelegate.swift */,
 				C0F8DA8D1E14FF80001C6EAC /* StoryNotifier.swift */,
 				C0F8DA6B1E14B288001C6EAC /* ViewController.swift */,
+				C0044ACF2312E40300E21CD3 /* NotificationModel.swift */,
 				C0F8DA7B1E14E4C6001C6EAC /* EventMonitor.swift */,
 				C0B35CE31E2713EA00220E89 /* StatusViewController.swift */,
 				C0B35CE41E2713EA00220E89 /* StatusViewController.xib */,
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0044AD02312E40300E21CD3 /* NotificationModel.swift in Sources */,
 				C0B35CE51E2713EA00220E89 /* StatusViewController.swift in Sources */,
 				C0B35CDB1E26ACB100220E89 /* structs.swift in Sources */,
 				C0F8DA7C1E14E4C6001C6EAC /* EventMonitor.swift in Sources */,

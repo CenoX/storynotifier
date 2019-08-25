@@ -44,8 +44,11 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
     private var cookies = [HTTPCookie]()
     
     private var lastNotificationDate = Date()
-    private var notifications = [KakaoNotification]()
-    private var receivedNotification = [String]()
+    private var _notifications = [KakaoNotification]()
+    private var _receivedNotification = [String]()
+    
+    private var notifications = [KakaoStoryNotification]()
+    private var lastNotification: KakaoStoryNotification?
     
     private var alertTimer = Timer()
     
@@ -141,54 +144,70 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
     }
     
     private func processAlert(with data: Data) {
-        if let jsonData = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)  {
-            if let notifications = jsonData as? NSArray {
-                for notification in notifications {
-                    if let data = notification as? NSDictionary {
-                        let createdTime = data.object(forKey: "created_at") as! String
-                        if  let message = data.object(forKey: "message") as? String,
-                            let id = data.object(forKey: "id") as? String,
-                            var scheme = data.object(forKey: "scheme") as? String {
-                            
-                            let commentID = data.object(forKey: "comment_id") as? String
-                            let content = data.object(forKey: "content") as? String
-                            
-                            if scheme.contains("kakaostory://activities/") {
-                                let str = scheme.components(separatedBy: "kakaostory://activities/")[1]
-                                let nID = str.components(separatedBy: ".")[0]
-                                let nValue = str.components(separatedBy: ".")[1]
-                                scheme = "\(nID)/\(nValue)"
-                            } else {
-                                scheme = ""
-                            }
-                            
-                            let notification = KakaoNotification(id: id, createdTime: Lib.getDate(from: createdTime), commentID: commentID, content: content, message: message, scheme: scheme)
-                            
-                            self.notifications.append(notification)
-                        }
-                    }
-                }
-                self.notifications.sort(by: {$0.createdTime < $1.createdTime})
-                if self.notifications.last!.createdTime != self.lastNotificationDate {
-                    self.lastNotificationDate = self.notifications.last!.createdTime
-                    if !self.receivedNotification.contains(self.notifications.last!.id) {
-                        self.makeNotification()
-                    }
+        
+        do {
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            let storyNotifications = try decoder.decode([KakaoStoryNotification].self, from: data)
+            if let lastValue = storyNotifications.first {
+                print(lastValue)
+                if lastNotification == nil {
+                    makeNotification(with: lastValue)
+                } else if lastValue.id != lastNotification?.id {
+                    makeNotification(with: lastValue)
                 }
             }
+        } catch let error {
+            print(error)
         }
+        
+        
+//        if let jsonData = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)  {
+//            print(jsonData)
+//            if let notifications = jsonData as? NSArray {
+//                for notification in notifications {
+//                    if let data = notification as? NSDictionary {
+//                        let createdTime = data.object(forKey: "created_at") as! String
+//                        if  let message = data.object(forKey: "message") as? String,
+//                            let id = data.object(forKey: "id") as? String,
+//                            var scheme = data.object(forKey: "scheme") as? String {
+//
+//                            let commentID = data.object(forKey: "comment_id") as? String
+//                            let content = data.object(forKey: "content") as? String
+//
+//                            if scheme.contains("kakaostory://activities/") {
+//                                let str = scheme.components(separatedBy: "kakaostory://activities/")[1]
+//                                let nID = str.components(separatedBy: ".")[0]
+//                                let nValue = str.components(separatedBy: ".")[1]
+//                                scheme = "\(nID)/\(nValue)"
+//                            } else {
+//                                scheme = ""
+//                            }
+//
+//                            let notification = KakaoNotification(id: id, createdTime: Lib.getDate(from: createdTime), commentID: commentID, content: content, message: message, scheme: scheme)
+//
+//                            self.notifications.append(notification)
+//                        }
+//                    }
+//                }
+//                self.notifications.sort(by: {$0.createdTime < $1.createdTime})
+//                if self.notifications.last!.createdTime != self.lastNotificationDate {
+//                    self.lastNotificationDate = self.notifications.last!.createdTime
+//                    if !self.receivedNotification.contains(self.notifications.last!.id) {
+//                        self.makeNotification()
+//                    }
+//                }
+//            }
+//        }
     }
     
-    private func makeNotification() {
-        let kNotification = self.notifications.last!
+    private func makeNotification(with storyNoti: KakaoStoryNotification) {
         let notification = NSUserNotification()
         notification.title = "카카오스토리"
-        let message = kNotification.message
-        if let content = kNotification.content {
-            notification.informativeText = content
-        }
+        let message = storyNoti.message
+        notification.informativeText = storyNoti.content
         notification.subtitle = message
-        notification.userInfo = ["URLComponent":kNotification.scheme]
+        notification.userInfo = ["URLComponent":storyNoti.schemeEdit()]
         notification.soundName = NSUserNotificationDefaultSoundName
         notification.setValue(true, forKey: "_showsButtons")
         notification.hasActionButton = true
@@ -196,7 +215,8 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
         
         NSUserNotificationCenter.default.deliver(notification)
         NSUserNotificationCenter.default.delegate = self
-        self.receivedNotification.append(kNotification.id)
+        
+        lastNotification = storyNoti
     }
         
     func userNotificationCenter(_ center: NSUserNotificationCenter, didActivate notification: NSUserNotification) {
