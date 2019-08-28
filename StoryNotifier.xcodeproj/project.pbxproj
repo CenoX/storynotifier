@@ -40,6 +40,7 @@
 		C0B35CE31E2713EA00220E89 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		C0B35CE41E2713EA00220E89 /* StatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusViewController.xib; sourceTree = "<group>"; };
 		C0B35CFD1E27237400220E89 /* relaunch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = relaunch.xcodeproj; path = relaunch/relaunch.xcodeproj; sourceTree = "<group>"; };
+		C0BC379323161EC800FB10A5 /* Story Notifier.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Story Notifier.entitlements"; sourceTree = "<group>"; };
 		C0F8DA661E14B288001C6EAC /* Story Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Story Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F8DA691E14B288001C6EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0F8DA6B1E14B288001C6EAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,12 +97,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C0BC379023161EC100FB10A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C0F8DA5D1E14B288001C6EAC = {
 			isa = PBXGroup;
 			children = (
 				C0B35CFD1E27237400220E89 /* relaunch.xcodeproj */,
 				C0F8DA681E14B288001C6EAC /* StoryNotifier */,
 				C0F8DA671E14B288001C6EAC /* Products */,
+				C0BC379023161EC100FB10A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +125,7 @@
 		C0F8DA681E14B288001C6EAC /* StoryNotifier */ = {
 			isa = PBXGroup;
 			children = (
+				C0BC379323161EC800FB10A5 /* Story Notifier.entitlements */,
 				C08F3E852316170800C2261D /* Helper */,
 				C08F3E84231616F900C2261D /* Model */,
 				C052D67D208ACEE500E9777B /* relaunch */,
@@ -166,6 +176,17 @@
 						DevelopmentTeam = UP6EXS2HJJ;
 						LastSwiftMigration = 1100;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -367,7 +388,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2019.08281112;
 				DEVELOPMENT_TEAM = UP6EXS2HJJ;
-				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = StoryNotifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MARKETING_VERSION = 1.0.5;
@@ -389,7 +409,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2019.08281112;
 				DEVELOPMENT_TEAM = UP6EXS2HJJ;
-				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = StoryNotifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MARKETING_VERSION = 1.0.5;
