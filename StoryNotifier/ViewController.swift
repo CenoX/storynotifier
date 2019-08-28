@@ -76,7 +76,6 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
 
     @IBAction private func login(sender: NSButton) {
         print(webView.mainFrameURL)
-        
     }
     
     func webView(_ sender: WebView!, didStartProvisionalLoadFor frame: WebFrame!) {
