@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import Sparkle
 import WebKit
 
 class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFrameLoadDelegate, WebPolicyDelegate {
