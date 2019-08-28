@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14854.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14854.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -59,7 +59,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nG0-7N-sHn">
                     <rect key="frame" x="18" y="277" width="380" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="CHECK FREQUENCY" id="Hdo-6z-bif">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="NOTIFICATION CHECK FREQUENCY" id="Hdo-6z-bif">
                         <font key="font" metaFont="systemMedium" size="12"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -83,7 +83,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="FwG-q4-s62">
                         <font key="font" metaFont="miniSystem"/>
-                        <mutableString key="title">DEVELOPED BY ByeongSu Kang
+                        <string key="title">DEVELOPED BY ByeongSu Kang
 ORIGINAL PROJECT STARTED BY REFLECTION*
 
 Copyright 2019 ByeongSu Kang. All rights reserved.
@@ -92,7 +92,7 @@ Copyright 2019 ByeongSu Kang. All rights reserved.
 ByeongSu Kang is not affiliated with Kakao Corp. in any ways.
 
 About Kakao's trademarks policy,
-See https://developer.kakao.com/policies/trademark</mutableString>
+See https://developer.kakao.com/policies/trademark</string>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -102,7 +102,7 @@ See https://developer.kakao.com/policies/trademark</mutableString>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="radio" title="FREQUENTLY (3s)" bezelStyle="regularSquare" imagePosition="left" alignment="center" state="on" inset="2" id="4J2-mS-7TP">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="menu" size="11"/>
+                        <font key="font" metaFont="controlContent" size="11"/>
                     </buttonCell>
                     <connections>
                         <action selector="updateValue:" target="-2" id="dvZ-sU-c4d"/>
@@ -113,7 +113,7 @@ See https://developer.kakao.com/policies/trademark</mutableString>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="radio" title="NORMAL (5s)" bezelStyle="regularSquare" imagePosition="left" alignment="center" inset="2" id="aK2-Oe-brR">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="menu" size="11"/>
+                        <font key="font" metaFont="controlContent" size="11"/>
                     </buttonCell>
                     <connections>
                         <action selector="updateValue:" target="-2" id="Gyo-xY-1xY"/>
@@ -124,7 +124,7 @@ See https://developer.kakao.com/policies/trademark</mutableString>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="radio" title="LONG (7s)" bezelStyle="regularSquare" imagePosition="left" alignment="center" inset="2" id="sj1-dh-w5d">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="menu" size="11"/>
+                        <font key="font" metaFont="controlContent" size="11"/>
                     </buttonCell>
                     <connections>
                         <action selector="updateValue:" target="-2" id="YY9-58-XV0"/>
