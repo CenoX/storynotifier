@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		452290AA1F6727860D0A3AA7 /* Pods_StoryNotifier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98088A5EFCAA51738EB93D79 /* Pods_StoryNotifier.framework */; };
+		C0044AD02312E40300E21CD3 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0044ACF2312E40300E21CD3 /* NotificationModel.swift */; };
 		C027D8151E419EF100FF3433 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = C027D8141E419EF100FF3433 /* dsa_pub.pem */; };
+		C052D67E208ACEE500E9777B /* relaunch in Resources */ = {isa = PBXBuildFile; fileRef = C052D67D208ACEE500E9777B /* relaunch */; };
 		C0B35CDB1E26ACB100220E89 /* structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B35CDA1E26ACB100220E89 /* structs.swift */; };
 		C0B35CE51E2713EA00220E89 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B35CE31E2713EA00220E89 /* StatusViewController.swift */; };
 		C0B35CE61E2713EA00220E89 /* StatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0B35CE41E2713EA00220E89 /* StatusViewController.xib */; };
-		C0B35D051E27248100220E89 /* relaunch in Resources */ = {isa = PBXBuildFile; fileRef = C0B35D021E27237600220E89 /* relaunch */; };
 		C0F8DA6A1E14B288001C6EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8DA691E14B288001C6EAC /* AppDelegate.swift */; };
 		C0F8DA6C1E14B288001C6EAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8DA6B1E14B288001C6EAC /* ViewController.swift */; };
 		C0F8DA6E1E14B288001C6EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F8DA6D1E14B288001C6EAC /* Assets.xcassets */; };
@@ -31,13 +32,6 @@
 			remoteGlobalIDString = C0B35CF31E27237400220E89;
 			remoteInfo = relaunch;
 		};
-		C0B35D031E27238500220E89 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C0B35CFD1E27237400220E89 /* relaunch.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C0B35CF21E27237400220E89;
-			remoteInfo = relaunch;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +40,9 @@
 		7ECE26C004C25E79C0A5EFCD /* Pods-StoryNotifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryNotifier.release.xcconfig"; path = "Pods/Target Support Files/Pods-StoryNotifier/Pods-StoryNotifier.release.xcconfig"; sourceTree = "<group>"; };
 		98088A5EFCAA51738EB93D79 /* Pods_StoryNotifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoryNotifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8D7F33272982D3017CD70B /* Pods-StoryNotifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryNotifier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StoryNotifier/Pods-StoryNotifier.debug.xcconfig"; sourceTree = "<group>"; };
+		C0044ACF2312E40300E21CD3 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		C027D8141E419EF100FF3433 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		C052D67D208ACEE500E9777B /* relaunch */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = relaunch; sourceTree = "<group>"; };
 		C0B35CDA1E26ACB100220E89 /* structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = structs.swift; sourceTree = "<group>"; };
 		C0B35CE31E2713EA00220E89 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		C0B35CE41E2713EA00220E89 /* StatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusViewController.xib; sourceTree = "<group>"; };
@@ -149,9 +145,11 @@
 		C0F8DA681E14B288001C6EAC /* StoryNotifier */ = {
 			isa = PBXGroup;
 			children = (
+				C052D67D208ACEE500E9777B /* relaunch */,
 				C0F8DA691E14B288001C6EAC /* AppDelegate.swift */,
 				C0F8DA8D1E14FF80001C6EAC /* StoryNotifier.swift */,
 				C0F8DA6B1E14B288001C6EAC /* ViewController.swift */,
+				C0044ACF2312E40300E21CD3 /* NotificationModel.swift */,
 				C0F8DA7B1E14E4C6001C6EAC /* EventMonitor.swift */,
 				C0B35CE31E2713EA00220E89 /* StatusViewController.swift */,
 				C0B35CE41E2713EA00220E89 /* StatusViewController.xib */,
@@ -175,12 +173,10 @@
 				C0F8DA631E14B288001C6EAC /* Frameworks */,
 				C0F8DA641E14B288001C6EAC /* Resources */,
 				72A472B762436AF3E36BF34C /* [CP] Embed Pods Frameworks */,
-				2AB25A6FC8489B033435E79B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C0B35D041E27238500220E89 /* PBXTargetDependency */,
 			);
 			name = StoryNotifier;
 			productName = StoryNotifier;
@@ -210,6 +206,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -246,37 +243,22 @@
 			files = (
 				C027D8151E419EF100FF3433 /* dsa_pub.pem in Resources */,
 				C0B35CE61E2713EA00220E89 /* StatusViewController.xib in Resources */,
-				C0B35D051E27248100220E89 /* relaunch in Resources */,
 				C0F8DA6E1E14B288001C6EAC /* Assets.xcassets in Resources */,
 				C0F8DA711E14B288001C6EAC /* Main.storyboard in Resources */,
+				C052D67E208ACEE500E9777B /* relaunch in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2AB25A6FC8489B033435E79B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StoryNotifier/Pods-StoryNotifier-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		72A472B762436AF3E36BF34C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-StoryNotifier/Pods-StoryNotifier-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-StoryNotifier/Pods-StoryNotifier-frameworks.sh",
 				"${PODS_ROOT}/Sparkle/Sparkle.framework",
 				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
 			);
@@ -287,7 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StoryNotifier/Pods-StoryNotifier-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StoryNotifier/Pods-StoryNotifier-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A9C1DE9C4FEAEF322C03EB28 /* [CP] Check Pods Manifest.lock */ = {
@@ -315,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0044AD02312E40300E21CD3 /* NotificationModel.swift in Sources */,
 				C0B35CE51E2713EA00220E89 /* StatusViewController.swift in Sources */,
 				C0B35CDB1E26ACB100220E89 /* structs.swift in Sources */,
 				C0F8DA7C1E14E4C6001C6EAC /* EventMonitor.swift in Sources */,
@@ -327,14 +310,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C0B35D041E27238500220E89 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = relaunch;
-			targetProxy = C0B35D031E27238500220E89 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C0F8DA6F1E14B288001C6EAC /* Main.storyboard */ = {
@@ -401,6 +376,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -452,6 +428,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
@@ -467,12 +444,12 @@
 				DEVELOPMENT_TEAM = UP6EXS2HJJ;
 				INFOPLIST_FILE = StoryNotifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kr.CenoX.StoryNotifier;
+				PRODUCT_BUNDLE_IDENTIFIER = co.cenox.StoryNotifier;
 				PRODUCT_MODULE_NAME = "${TARGET_NAME}";
 				PRODUCT_NAME = "Story Notifier";
+				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "StoryNotifier/StoryNotifier-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -488,11 +465,11 @@
 				DEVELOPMENT_TEAM = UP6EXS2HJJ;
 				INFOPLIST_FILE = StoryNotifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kr.CenoX.StoryNotifier;
+				PRODUCT_BUNDLE_IDENTIFIER = co.cenox.StoryNotifier;
 				PRODUCT_MODULE_NAME = "${TARGET_NAME}";
 				PRODUCT_NAME = "Story Notifier";
+				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "StoryNotifier/StoryNotifier-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

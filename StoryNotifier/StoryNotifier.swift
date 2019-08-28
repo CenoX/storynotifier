@@ -10,7 +10,7 @@ import Cocoa
 
 class StoryNotifier: NSApplication {
     override func sendEvent(_ event: NSEvent) {
-        if event.type == .keyDown {
+        if event.type == NSEvent.EventType.keyDown {
             
             if (event.modifierFlags.contains(NSEvent.ModifierFlags.command)) {
                 switch event.charactersIgnoringModifiers!.lowercased() {

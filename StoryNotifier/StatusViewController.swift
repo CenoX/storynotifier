@@ -31,10 +31,10 @@ class StatusViewController: NSViewController {
         a.informativeText = "설정을 반영하기 위해 앱을 재시작 하여야합니다.\n계속하시겠습니까?"
         a.addButton(withTitle: "재시작")
         a.addButton(withTitle: "취소")
-        a.alertStyle = .warning
+        a.alertStyle = NSAlert.Style.warning
         
         a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
-            if modalResponse == .alertFirstButtonReturn {
+            if modalResponse == NSApplication.ModalResponse.alertFirstButtonReturn {
                 NSApplication.shared.relaunch(sender)
             }
         })
@@ -50,10 +50,10 @@ class StatusViewController: NSViewController {
         a.informativeText = "모든 어플리케이션의 설정이 지워지며, 다시 로그인하셔야합니다."
         a.addButton(withTitle: "로그아웃")
         a.addButton(withTitle: "취소")
-        a.alertStyle = .warning
+        a.alertStyle = NSAlert.Style.warning
         
         a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
-            if modalResponse == .alertFirstButtonReturn {
+            if modalResponse == NSApplication.ModalResponse.alertFirstButtonReturn {
                 if let bundle = Bundle.main.bundleIdentifier {
                     UserDefaults.standard.removePersistentDomain(forName: bundle)
                     UserDefaults.standard.synchronize()

@@ -1,0 +1,78 @@
+
+/* Class = "NSTextFieldCell"; title = "PASSWORD"; ObjectID = "1Re-Qb-OJz"; */
+"1Re-Qb-OJz.title" = "PASSWORD";
+
+/* Class = "NSMenuItem"; title = "StoryNotifier"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "StoryNotifier";
+
+/* Class = "NSMenuItem"; title = "Quit StoryNotifier"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Quit StoryNotifier";
+
+/* Class = "NSMenuItem"; title = "About StoryNotifier"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "About StoryNotifier";
+
+/* Class = "NSTextFieldCell"; title = "STORY NOTIFIER"; ObjectID = "7lb-3Y-zES"; */
+"7lb-3Y-zES.title" = "STORY NOTIFIER";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Main Menu";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "Preferences…";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "StoryNotifier Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "StoryNotifier Help";
+
+/* Class = "NSWindow"; title = "STORY NOTIFIER"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "STORY NOTIFIER";
+
+/* Class = "NSTextFieldCell"; placeholderString = "cenox@v.anil.la"; ObjectID = "Jqz-UI-MYd"; */
+"Jqz-UI-MYd.placeholderString" = "cenox@v.anil.la";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Show All";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
+"LE2-aR-0XJ.title" = "Bring All to Front";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
+"OY7-WF-poV.title" = "Minimize";
+
+/* Class = "NSMenuItem"; title = "Hide StoryNotifier"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Hide StoryNotifier";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
+"R4o-n2-Eq4.title" = "Zoom";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
+"Td7-aD-5lo.title" = "Window";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Hide Others";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
+"aUF-d1-5bR.title" = "Window";
+
+/* Class = "NSTextFieldCell"; title = "KAKAO ID"; ObjectID = "bYN-kg-PNB"; */
+"bYN-kg-PNB.title" = "KAKAO ID";
+
+/* Class = "NSButtonCell"; title = "LOGIN"; ObjectID = "dE2-fx-FqE"; */
+"dE2-fx-FqE.title" = "LOGIN";
+
+/* Class = "NSSecureTextFieldCell"; placeholderString = "!Password1111"; ObjectID = "dbb-q3-9W2"; */
+"dbb-q3-9W2.placeholderString" = "!Password1111";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "Services";
+
+/* Class = "NSMenu"; title = "StoryNotifier"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "StoryNotifier";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "Help";

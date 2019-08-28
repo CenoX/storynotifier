@@ -7,4 +7,5 @@ target 'StoryNotifier' do
 
   # Pods for StoryNotifier
   pod 'Sparkle'
+
 end
