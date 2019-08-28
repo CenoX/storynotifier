@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C0044AD02312E40300E21CD3 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0044ACF2312E40300E21CD3 /* NotificationModel.swift */; };
-		C052D67E208ACEE500E9777B /* relaunch in Resources */ = {isa = PBXBuildFile; fileRef = C052D67D208ACEE500E9777B /* relaunch */; };
 		C08F3E872316173300C2261D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F3E862316173300C2261D /* Extension.swift */; };
 		C0B35CDB1E26ACB100220E89 /* structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B35CDA1E26ACB100220E89 /* structs.swift */; };
 		C0B35CE51E2713EA00220E89 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B35CE31E2713EA00220E89 /* StatusViewController.swift */; };
@@ -21,25 +20,13 @@
 		C0F8DA8E1E14FF80001C6EAC /* StoryNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8DA8D1E14FF80001C6EAC /* StoryNotifier.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C0B35D011E27237600220E89 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C0B35CFD1E27237400220E89 /* relaunch.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C0B35CF31E27237400220E89;
-			remoteInfo = relaunch;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		C0044ACF2312E40300E21CD3 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		C027D8141E419EF100FF3433 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
-		C052D67D208ACEE500E9777B /* relaunch */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = relaunch; sourceTree = "<group>"; };
 		C08F3E862316173300C2261D /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		C0B35CDA1E26ACB100220E89 /* structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = structs.swift; sourceTree = "<group>"; };
 		C0B35CE31E2713EA00220E89 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		C0B35CE41E2713EA00220E89 /* StatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusViewController.xib; sourceTree = "<group>"; };
-		C0B35CFD1E27237400220E89 /* relaunch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = relaunch.xcodeproj; path = relaunch/relaunch.xcodeproj; sourceTree = "<group>"; };
 		C0BC379323161EC800FB10A5 /* Story Notifier.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Story Notifier.entitlements"; sourceTree = "<group>"; };
 		C0F8DA661E14B288001C6EAC /* Story Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Story Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F8DA691E14B288001C6EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,14 +76,6 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
-		C0B35CFE1E27237400220E89 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C0B35D021E27237600220E89 /* relaunch */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C0BC379023161EC100FB10A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +86,6 @@
 		C0F8DA5D1E14B288001C6EAC = {
 			isa = PBXGroup;
 			children = (
-				C0B35CFD1E27237400220E89 /* relaunch.xcodeproj */,
 				C0F8DA681E14B288001C6EAC /* StoryNotifier */,
 				C0F8DA671E14B288001C6EAC /* Products */,
 				C0BC379023161EC100FB10A5 /* Frameworks */,
@@ -128,7 +106,6 @@
 				C0BC379323161EC800FB10A5 /* Story Notifier.entitlements */,
 				C08F3E852316170800C2261D /* Helper */,
 				C08F3E84231616F900C2261D /* Model */,
-				C052D67D208ACEE500E9777B /* relaunch */,
 				C0F8DA691E14B288001C6EAC /* AppDelegate.swift */,
 				C0F8DA8D1E14FF80001C6EAC /* StoryNotifier.swift */,
 				C0F8DA6B1E14B288001C6EAC /* ViewController.swift */,
@@ -205,28 +182,12 @@
 			mainGroup = C0F8DA5D1E14B288001C6EAC;
 			productRefGroup = C0F8DA671E14B288001C6EAC /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C0B35CFE1E27237400220E89 /* Products */;
-					ProjectRef = C0B35CFD1E27237400220E89 /* relaunch.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				C0F8DA651E14B288001C6EAC /* StoryNotifier */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C0B35D021E27237600220E89 /* relaunch */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = relaunch;
-			remoteRef = C0B35D011E27237600220E89 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C0F8DA641E14B288001C6EAC /* Resources */ = {
@@ -236,7 +197,6 @@
 				C0B35CE61E2713EA00220E89 /* StatusViewController.xib in Resources */,
 				C0F8DA6E1E14B288001C6EAC /* Assets.xcassets in Resources */,
 				C0F8DA711E14B288001C6EAC /* Main.storyboard in Resources */,
-				C052D67E208ACEE500E9777B /* relaunch in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

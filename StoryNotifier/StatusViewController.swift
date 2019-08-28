@@ -27,17 +27,12 @@ class StatusViewController: NSViewController {
         UserDefaults.standard.set(updateTag, forKey: "frequency")
         UserDefaults.standard.synchronize()
         let a = NSAlert()
-        a.messageText = "설정을 적용하였습니다."
-        a.informativeText = "설정을 반영하기 위해 앱을 재시작 하여야합니다.\n계속하시겠습니까?"
-        a.addButton(withTitle: "재시작")
-        a.addButton(withTitle: "취소")
+        a.messageText = "설정을 적용하였습니다"
+        a.informativeText = "설정은 다음 실행 때부터 반영됩니다."
+        a.addButton(withTitle: "확인")
         a.alertStyle = NSAlert.Style.warning
         
-        a.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
-            if modalResponse == NSApplication.ModalResponse.alertFirstButtonReturn {
-                NSApplication.shared.relaunch(sender)
-            }
-        })
+        a.beginSheetModal(for: self.view.window!, completionHandler: nil)
     }
     
     @IBAction private func quitApp(_ sender: AnyObject) {
@@ -47,7 +42,7 @@ class StatusViewController: NSViewController {
     @IBAction private func logout(_sender: NSButton) {
         let a = NSAlert()
         a.messageText = "로그아웃 하시겠습니까?"
-        a.informativeText = "모든 어플리케이션의 설정이 지워지며, 다시 로그인하셔야합니다."
+        a.informativeText = "모든 어플리케이션의 설정이 지워지며, 다시 로그인하셔야합니다"
         a.addButton(withTitle: "로그아웃")
         a.addButton(withTitle: "취소")
         a.alertStyle = NSAlert.Style.warning
@@ -76,7 +71,7 @@ class StatusViewController: NSViewController {
                 if reponse.url == URL(string: "https://story.kakao.com/s/login") {
                     let notification = NSUserNotification()
                     notification.title = "로그아웃 완료"
-                    notification.subtitle = "이용해 주셔서 감사합니다."
+                    notification.subtitle = "이용해 주셔서 감사합니다"
                     notification.soundName = NSUserNotificationDefaultSoundName
                     
                     NSUserNotificationCenter.default.deliver(notification)

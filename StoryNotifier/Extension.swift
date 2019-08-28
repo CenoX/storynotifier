@@ -45,17 +45,6 @@ extension String {
     }
 }
 
-extension NSApplication {
-    func relaunch(_ sender: AnyObject?) {
-        let task = Process()
-        // helper tool path
-        task.launchPath = Bundle.main.path(forResource: "relaunch", ofType: nil)!
-        // self PID as a argument
-        task.arguments = [String(ProcessInfo.processInfo.processIdentifier)]
-        task.launch()
-    }
-}
-
 extension FileManager {
     
     func createApplicationSupport() {
