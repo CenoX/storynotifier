@@ -20,8 +20,6 @@
 		C0F8DA6E1E14B288001C6EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0F8DA6D1E14B288001C6EAC /* Assets.xcassets */; };
 		C0F8DA711E14B288001C6EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0F8DA6F1E14B288001C6EAC /* Main.storyboard */; };
 		C0F8DA7C1E14E4C6001C6EAC /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8DA7B1E14E4C6001C6EAC /* EventMonitor.swift */; };
-		C0F8DA821E14EB95001C6EAC /* Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8DA811E14EB95001C6EAC /* Lib.swift */; };
-		C0F8DA881E14F45F001C6EAC /* Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F8DA871E14F45F001C6EAC /* Crypto.m */; };
 		C0F8DA8E1E14FF80001C6EAC /* StoryNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F8DA8D1E14FF80001C6EAC /* StoryNotifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,10 +54,6 @@
 		C0F8DA701E14B288001C6EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0F8DA721E14B288001C6EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0F8DA7B1E14E4C6001C6EAC /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
-		C0F8DA811E14EB95001C6EAC /* Lib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lib.swift; sourceTree = "<group>"; };
-		C0F8DA831E14F43D001C6EAC /* StoryNotifier-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoryNotifier-Bridging-Header.h"; sourceTree = "<group>"; };
-		C0F8DA861E14F45F001C6EAC /* Crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crypto.h; sourceTree = "<group>"; };
-		C0F8DA871E14F45F001C6EAC /* Crypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Crypto.m; sourceTree = "<group>"; };
 		C0F8DA8D1E14FF80001C6EAC /* StoryNotifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryNotifier.swift; sourceTree = "<group>"; };
 		C8F0CDDF76BB2C77153F9EFF /* Pods-Story Notifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Story Notifier.release.xcconfig"; path = "Pods/Target Support Files/Pods-Story Notifier/Pods-Story Notifier.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,23 +90,11 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C027D8161E41D78700FF3433 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				C0F8DA861E14F45F001C6EAC /* Crypto.h */,
-				C0F8DA871E14F45F001C6EAC /* Crypto.m */,
-				C0F8DA811E14EB95001C6EAC /* Lib.swift */,
-				C08F3E862316173300C2261D /* Extension.swift */,
-			);
-			name = Lib;
-			sourceTree = "<group>";
-		};
 		C027D8171E41D79D00FF3433 /* Support files */ = {
 			isa = PBXGroup;
 			children = (
 				C027D8141E419EF100FF3433 /* dsa_pub.pem */,
 				C0F8DA721E14B288001C6EAC /* Info.plist */,
-				C0F8DA831E14F43D001C6EAC /* StoryNotifier-Bridging-Header.h */,
 			);
 			name = "Support files";
 			sourceTree = "<group>";
@@ -129,6 +111,7 @@
 		C08F3E852316170800C2261D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C08F3E862316173300C2261D /* Extension.swift */,
 				C0F8DA7B1E14E4C6001C6EAC /* EventMonitor.swift */,
 			);
 			name = Helper;
@@ -174,7 +157,6 @@
 				C0F8DA6D1E14B288001C6EAC /* Assets.xcassets */,
 				C0F8DA6F1E14B288001C6EAC /* Main.storyboard */,
 				C0B35CE41E2713EA00220E89 /* StatusViewController.xib */,
-				C027D8161E41D78700FF3433 /* Lib */,
 				C027D8171E41D79D00FF3433 /* Support files */,
 			);
 			path = StoryNotifier;
@@ -323,9 +305,7 @@
 				C0F8DA6C1E14B288001C6EAC /* ViewController.swift in Sources */,
 				C08F3E872316173300C2261D /* Extension.swift in Sources */,
 				C0F8DA6A1E14B288001C6EAC /* AppDelegate.swift in Sources */,
-				C0F8DA821E14EB95001C6EAC /* Lib.swift in Sources */,
 				C0F8DA8E1E14FF80001C6EAC /* StoryNotifier.swift in Sources */,
-				C0F8DA881E14F45F001C6EAC /* Crypto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +449,6 @@
 				PRODUCT_MODULE_NAME = "${TARGET_NAME}";
 				PRODUCT_NAME = "Story Notifier";
 				SKIP_INSTALL = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "StoryNotifier/StoryNotifier-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -491,7 +470,6 @@
 				PRODUCT_MODULE_NAME = "${TARGET_NAME}";
 				PRODUCT_NAME = "Story Notifier";
 				SKIP_INSTALL = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "StoryNotifier/StoryNotifier-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

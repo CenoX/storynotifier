@@ -10,6 +10,7 @@ import Foundation
 import Cocoa
 
 extension String {
+    
     func convertFromHTML() -> String {
         guard let encodedData = self.data(using: .utf8) else {
             return self
@@ -26,11 +27,21 @@ extension String {
             return self
         }
     }
+    
     func isValidEmail() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: self)
+    }
+    
+    func getDate() -> Date {
+        let dateStr = self.replacingOccurrences(of: "T", with: " ").replacingOccurrences(of: "Z", with: "")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        let date = dateFormatter.date(from: dateStr)
+        return date!
     }
 }
 
@@ -46,6 +57,7 @@ extension NSApplication {
 }
 
 extension FileManager {
+    
     func createApplicationSupport() {
         let appSupportURL = self.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
         let vanilla = appSupportURL.appendingPathComponent("StoryNotifier")
@@ -59,4 +71,10 @@ extension FileManager {
             }
         }
     }
+    
+    func getURLWith(FileName name: String) -> URL {
+        let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent("StoryNotifier").appendingPathComponent(name)
+        return url
+    }
+    
 }
