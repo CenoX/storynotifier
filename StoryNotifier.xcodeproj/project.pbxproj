@@ -11,6 +11,7 @@
 		C0044AD02312E40300E21CD3 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0044ACF2312E40300E21CD3 /* NotificationModel.swift */; };
 		C027D8151E419EF100FF3433 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = C027D8141E419EF100FF3433 /* dsa_pub.pem */; };
 		C052D67E208ACEE500E9777B /* relaunch in Resources */ = {isa = PBXBuildFile; fileRef = C052D67D208ACEE500E9777B /* relaunch */; };
+		C08F3E872316173300C2261D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08F3E862316173300C2261D /* Extension.swift */; };
 		C0B35CDB1E26ACB100220E89 /* structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B35CDA1E26ACB100220E89 /* structs.swift */; };
 		C0B35CE51E2713EA00220E89 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B35CE31E2713EA00220E89 /* StatusViewController.swift */; };
 		C0B35CE61E2713EA00220E89 /* StatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0B35CE41E2713EA00220E89 /* StatusViewController.xib */; };
@@ -43,6 +44,7 @@
 		C0044ACF2312E40300E21CD3 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		C027D8141E419EF100FF3433 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		C052D67D208ACEE500E9777B /* relaunch */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = relaunch; sourceTree = "<group>"; };
+		C08F3E862316173300C2261D /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		C0B35CDA1E26ACB100220E89 /* structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = structs.swift; sourceTree = "<group>"; };
 		C0B35CE31E2713EA00220E89 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		C0B35CE41E2713EA00220E89 /* StatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusViewController.xib; sourceTree = "<group>"; };
@@ -97,10 +99,10 @@
 		C027D8161E41D78700FF3433 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				C0B35CDA1E26ACB100220E89 /* structs.swift */,
 				C0F8DA861E14F45F001C6EAC /* Crypto.h */,
 				C0F8DA871E14F45F001C6EAC /* Crypto.m */,
 				C0F8DA811E14EB95001C6EAC /* Lib.swift */,
+				C08F3E862316173300C2261D /* Extension.swift */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -113,6 +115,23 @@
 				C0F8DA831E14F43D001C6EAC /* StoryNotifier-Bridging-Header.h */,
 			);
 			name = "Support files";
+			sourceTree = "<group>";
+		};
+		C08F3E84231616F900C2261D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0044ACF2312E40300E21CD3 /* NotificationModel.swift */,
+				C0B35CDA1E26ACB100220E89 /* structs.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C08F3E852316170800C2261D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C0F8DA7B1E14E4C6001C6EAC /* EventMonitor.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		C0B35CFE1E27237400220E89 /* Products */ = {
@@ -145,16 +164,16 @@
 		C0F8DA681E14B288001C6EAC /* StoryNotifier */ = {
 			isa = PBXGroup;
 			children = (
+				C08F3E852316170800C2261D /* Helper */,
+				C08F3E84231616F900C2261D /* Model */,
 				C052D67D208ACEE500E9777B /* relaunch */,
 				C0F8DA691E14B288001C6EAC /* AppDelegate.swift */,
 				C0F8DA8D1E14FF80001C6EAC /* StoryNotifier.swift */,
 				C0F8DA6B1E14B288001C6EAC /* ViewController.swift */,
-				C0044ACF2312E40300E21CD3 /* NotificationModel.swift */,
-				C0F8DA7B1E14E4C6001C6EAC /* EventMonitor.swift */,
 				C0B35CE31E2713EA00220E89 /* StatusViewController.swift */,
-				C0B35CE41E2713EA00220E89 /* StatusViewController.xib */,
 				C0F8DA6D1E14B288001C6EAC /* Assets.xcassets */,
 				C0F8DA6F1E14B288001C6EAC /* Main.storyboard */,
+				C0B35CE41E2713EA00220E89 /* StatusViewController.xib */,
 				C027D8161E41D78700FF3433 /* Lib */,
 				C027D8171E41D79D00FF3433 /* Support files */,
 			);
@@ -190,13 +209,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Team Vanilla";
 				TargetAttributes = {
 					C0F8DA651E14B288001C6EAC = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = UP6EXS2HJJ;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1100;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -302,6 +321,7 @@
 				C0B35CDB1E26ACB100220E89 /* structs.swift in Sources */,
 				C0F8DA7C1E14E4C6001C6EAC /* EventMonitor.swift in Sources */,
 				C0F8DA6C1E14B288001C6EAC /* ViewController.swift in Sources */,
+				C08F3E872316173300C2261D /* Extension.swift in Sources */,
 				C0F8DA6A1E14B288001C6EAC /* AppDelegate.swift in Sources */,
 				C0F8DA821E14EB95001C6EAC /* Lib.swift in Sources */,
 				C0F8DA8E1E14FF80001C6EAC /* StoryNotifier.swift in Sources */,
@@ -442,6 +462,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = UP6EXS2HJJ;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = StoryNotifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.cenox.StoryNotifier;
@@ -450,7 +471,7 @@
 				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "StoryNotifier/StoryNotifier-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -463,6 +484,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = UP6EXS2HJJ;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = StoryNotifier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.cenox.StoryNotifier;
@@ -470,7 +492,7 @@
 				PRODUCT_NAME = "Story Notifier";
 				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "StoryNotifier/StoryNotifier-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

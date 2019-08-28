@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+@available(*, deprecated)
 struct KakaoNotification {
     var id: String
     var createdTime: Date

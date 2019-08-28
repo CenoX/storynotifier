@@ -10,43 +10,13 @@ import Cocoa
 import Sparkle
 import WebKit
 
-extension String {
-    func convertFromHTML() -> String {
-        guard let encodedData = self.data(using: .utf8) else {
-            return self
-        }
-        let attributedOptions: [NSAttributedString.DocumentReadingOptionKey : Any] = [
-            .documentType: NSAttributedString.DocumentType.html,
-            .characterEncoding: String.Encoding.utf8.rawValue
-        ]
-        do {
-            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            return attributedString.string
-        } catch {
-            print("Error: \(error)")
-            return self
-        }
-    }
-    func isValidEmail() -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: self)
-    }
-}
-
 class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFrameLoadDelegate, WebPolicyDelegate {
     
-    let loginURL = URL(string: "https://accounts.kakao.com/weblogin/authenticate")!
     let webViewURL = URL(string: "https://accounts.kakao.com/weblogin/main_captcha?continue=https%3A%2F%2Fstory.kakao.com")!
     let notificationURL = URL(string: "https://story.kakao.com/a/notifications")!
     
     private var cookies = [HTTPCookie]()
-    
-    private var lastNotificationDate = Date()
-    private var _notifications = [KakaoNotification]()
-    private var _receivedNotification = [String]()
-    
+        
     private var notifications = [KakaoStoryNotification]()
     private var lastNotification: KakaoStoryNotification?
     
@@ -75,16 +45,16 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
     }
 
     @IBAction private func login(sender: NSButton) {
-        print(webView.mainFrameURL)
+        print(webView.mainFrameURL as Any)
     }
     
     func webView(_ sender: WebView!, didStartProvisionalLoadFor frame: WebFrame!) {
-        print(webView.mainFrameURL)
+        print(webView.mainFrameURL as Any)
     }
     
     func webView(_ sender: WebView!, didFinishLoadFor frame: WebFrame!) {
         if webView.mainFrameURL == "https://story.kakao.com/" {
-            print(webView.mainFrameURL)
+            print(webView.mainFrameURL as Any)
             self.view.window?.close()
             self.startReceiveAlert()
         }
@@ -143,7 +113,6 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
     }
     
     private func processAlert(with data: Data) {
-        
         do {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
@@ -159,45 +128,6 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
         } catch let error {
             print(error)
         }
-        
-        
-//        if let jsonData = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)  {
-//            print(jsonData)
-//            if let notifications = jsonData as? NSArray {
-//                for notification in notifications {
-//                    if let data = notification as? NSDictionary {
-//                        let createdTime = data.object(forKey: "created_at") as! String
-//                        if  let message = data.object(forKey: "message") as? String,
-//                            let id = data.object(forKey: "id") as? String,
-//                            var scheme = data.object(forKey: "scheme") as? String {
-//
-//                            let commentID = data.object(forKey: "comment_id") as? String
-//                            let content = data.object(forKey: "content") as? String
-//
-//                            if scheme.contains("kakaostory://activities/") {
-//                                let str = scheme.components(separatedBy: "kakaostory://activities/")[1]
-//                                let nID = str.components(separatedBy: ".")[0]
-//                                let nValue = str.components(separatedBy: ".")[1]
-//                                scheme = "\(nID)/\(nValue)"
-//                            } else {
-//                                scheme = ""
-//                            }
-//
-//                            let notification = KakaoNotification(id: id, createdTime: Lib.getDate(from: createdTime), commentID: commentID, content: content, message: message, scheme: scheme)
-//
-//                            self.notifications.append(notification)
-//                        }
-//                    }
-//                }
-//                self.notifications.sort(by: {$0.createdTime < $1.createdTime})
-//                if self.notifications.last!.createdTime != self.lastNotificationDate {
-//                    self.lastNotificationDate = self.notifications.last!.createdTime
-//                    if !self.receivedNotification.contains(self.notifications.last!.id) {
-//                        self.makeNotification()
-//                    }
-//                }
-//            }
-//        }
     }
     
     private func makeNotification(with storyNoti: KakaoStoryNotification) {

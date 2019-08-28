@@ -20,11 +20,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Lib.makeFolderToApplicationSupport()
                 
         if let button = statusItem.button {
-            button.image = NSImage(named: NSImage.Name(rawValue: "icon"))
+            button.image = NSImage(named: "icon")
             button.action = #selector(AppDelegate.togglePopover)
         }
         
-        popover.contentViewController = StatusViewController(nibName: NSNib.Name(rawValue: "StatusViewController"), bundle: nil)
+        popover.contentViewController = StatusViewController(nibName: "StatusViewController", bundle: nil)
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [unowned self] event in
             if self.popover.isShown {
                 self.closePopover(event)
