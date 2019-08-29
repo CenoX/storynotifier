@@ -59,7 +59,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nG0-7N-sHn">
                     <rect key="frame" x="18" y="277" width="380" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="NOTIFICATION CHECK FREQUENCY" id="Hdo-6z-bif">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="알림 주기 설정" id="Hdo-6z-bif">
                         <font key="font" metaFont="systemMedium" size="12"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -72,7 +72,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6Y-I7-pyS">
                     <rect key="frame" x="18" y="176" width="380" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="DISCLAIMER" id="2lw-9d-C8l">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="면책조항 | DISCLAIMER" id="2lw-9d-C8l">
                         <font key="font" metaFont="systemMedium" size="12"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -98,22 +98,22 @@ See https://developer.kakao.com/policies/trademark</string>
                     </textFieldCell>
                 </textField>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BB0-KQ-hT7">
-                    <rect key="frame" x="19" y="243" width="118" height="18"/>
+                    <rect key="frame" x="19" y="243" width="70" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="radio" title="FREQUENTLY (3s)" bezelStyle="regularSquare" imagePosition="left" alignment="center" state="on" inset="2" id="4J2-mS-7TP">
+                    <buttonCell key="cell" type="radio" title="자주 (3초)" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="4J2-mS-7TP">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="controlContent" size="11"/>
+                        <font key="font" metaFont="menu" size="11"/>
                     </buttonCell>
                     <connections>
                         <action selector="updateValue:" target="-2" id="dvZ-sU-c4d"/>
                     </connections>
                 </button>
                 <button fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="DSa-Te-gEk">
-                    <rect key="frame" x="19" y="221" width="94" height="18"/>
+                    <rect key="frame" x="19" y="221" width="70" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="radio" title="NORMAL (5s)" bezelStyle="regularSquare" imagePosition="left" alignment="center" inset="2" id="aK2-Oe-brR">
+                    <buttonCell key="cell" type="radio" title="보통 (5초)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="aK2-Oe-brR">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="controlContent" size="11"/>
+                        <font key="font" metaFont="menu" size="11"/>
                     </buttonCell>
                     <connections>
                         <action selector="updateValue:" target="-2" id="Gyo-xY-1xY"/>
@@ -122,9 +122,9 @@ See https://developer.kakao.com/policies/trademark</string>
                 <button fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="WNC-IJ-qc0">
                     <rect key="frame" x="19" y="199" width="76" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="radio" title="LONG (7s)" bezelStyle="regularSquare" imagePosition="left" alignment="center" inset="2" id="sj1-dh-w5d">
+                    <buttonCell key="cell" type="radio" title="길게 (7초)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="sj1-dh-w5d">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="controlContent" size="11"/>
+                        <font key="font" metaFont="menu" size="11"/>
                     </buttonCell>
                     <connections>
                         <action selector="updateValue:" target="-2" id="YY9-58-XV0"/>
@@ -144,7 +144,7 @@ See https://developer.kakao.com/policies/trademark</string>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0t9-Rb-gym">
                     <rect key="frame" x="323" y="220" width="73" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="recessed" title="SAVE" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5J7-to-goD">
+                    <buttonCell key="cell" type="recessed" title="저장" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5J7-to-goD">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                         <font key="font" metaFont="systemBold" size="12"/>
                     </buttonCell>
