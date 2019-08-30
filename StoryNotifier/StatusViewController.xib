@@ -44,7 +44,7 @@
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aS1-vB-Hju">
                     <rect key="frame" x="172" y="19" width="72" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="recessed" title="QUIT" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MFM-00-BYM">
+                    <buttonCell key="cell" type="recessed" title="앱 종료" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MFM-00-BYM">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="systemBold" size="12"/>
                     </buttonCell>
@@ -72,8 +72,8 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6Y-I7-pyS">
                     <rect key="frame" x="18" y="176" width="380" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="면책조항 | DISCLAIMER" id="2lw-9d-C8l">
-                        <font key="font" metaFont="systemMedium" size="12"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="면책조항" id="2lw-9d-C8l">
+                        <font key="font" size="12" name=".AppleSDGothicNeoI-Medium"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -83,16 +83,16 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="FwG-q4-s62">
                         <font key="font" metaFont="miniSystem"/>
-                        <string key="title">DEVELOPED BY ByeongSu Kang
+                        <mutableString key="title">DEVELOPED BY ByeongSu Kang
 ORIGINAL PROJECT STARTED BY REFLECTION*
 
 Copyright 2019 ByeongSu Kang. All rights reserved.
 
-"Kakao®", "KakaoStory®" are trademarks fo Kakao Corp.
-ByeongSu Kang is not affiliated with Kakao Corp. in any ways.
+ByeongSu Kang은 Kakao Corp. 와 제휴하지 않았으며, 어떠한 관계도 없습니다.
+ByeongSu Kang은 사용자 또는 제3자에 대해 어떠한 책임도 지지 않습니다.
 
-About Kakao's trademarks policy,
-See https://developer.kakao.com/policies/trademark</string>
+Kakao의 trademarks 정책은,
+https://developer.kakao.com/policies/trademark 를 참고하십시오.</mutableString>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -133,7 +133,7 @@ See https://developer.kakao.com/policies/trademark</string>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbF-ok-NBz">
                     <rect key="frame" x="301" y="19" width="95" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="recessed" title="LOGOUT" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QCp-lF-PKL">
+                    <buttonCell key="cell" type="recessed" title="로그아웃" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QCp-lF-PKL">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="systemBold" size="12"/>
                     </buttonCell>
