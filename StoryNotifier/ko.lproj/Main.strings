@@ -1,78 +1,60 @@
 
-/* Class = "NSTextFieldCell"; title = "PASSWORD"; ObjectID = "1Re-Qb-OJz"; */
-"1Re-Qb-OJz.title" = "PASSWORD";
-
 /* Class = "NSMenuItem"; title = "StoryNotifier"; ObjectID = "1Xt-HY-uBw"; */
 "1Xt-HY-uBw.title" = "StoryNotifier";
 
 /* Class = "NSMenuItem"; title = "Quit StoryNotifier"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Quit StoryNotifier";
+"4sb-4s-VLi.title" = "StoryNotifier 종료";
 
 /* Class = "NSMenuItem"; title = "About StoryNotifier"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "About StoryNotifier";
+"5kV-Vb-QxS.title" = "StoryNotifier에 대하여";
 
-/* Class = "NSTextFieldCell"; title = "STORY NOTIFIER"; ObjectID = "7lb-3Y-zES"; */
-"7lb-3Y-zES.title" = "STORY NOTIFIER";
+/* Class = "NSTextFieldCell"; title = "Story Notifier"; ObjectID = "7lb-3Y-zES"; */
+"7lb-3Y-zES.title" = "Story Notifier";
 
 /* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
-"AYu-sK-qS6.title" = "Main Menu";
+"AYu-sK-qS6.title" = "메인 메뉴";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
-"BOF-NM-1cW.title" = "Preferences…";
+"BOF-NM-1cW.title" = "환경설정…";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
-"F2S-fz-NVQ.title" = "Help";
+"F2S-fz-NVQ.title" = "도움말";
 
 /* Class = "NSMenuItem"; title = "StoryNotifier Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "StoryNotifier Help";
+"FKE-Sm-Kum.title" = "StoryNotifier 도움말";
 
 /* Class = "NSWindow"; title = "STORY NOTIFIER"; ObjectID = "IQv-IB-iLA"; */
 "IQv-IB-iLA.title" = "STORY NOTIFIER";
 
-/* Class = "NSTextFieldCell"; placeholderString = "cenox@v.anil.la"; ObjectID = "Jqz-UI-MYd"; */
-"Jqz-UI-MYd.placeholderString" = "cenox@v.anil.la";
-
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
-"Kd2-mp-pUS.title" = "Show All";
+"Kd2-mp-pUS.title" = "전체 보기";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
-"LE2-aR-0XJ.title" = "Bring All to Front";
+"LE2-aR-0XJ.title" = "모두 앞으로 가져오기";
 
 /* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
-"NMo-om-nkz.title" = "Services";
+"NMo-om-nkz.title" = "서비스";
 
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
-"OY7-WF-poV.title" = "Minimize";
-
-/* Class = "NSMenuItem"; title = "Hide StoryNotifier"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "Hide StoryNotifier";
+"OY7-WF-poV.title" = "최소화";
 
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
-"R4o-n2-Eq4.title" = "Zoom";
+"R4o-n2-Eq4.title" = "확대";
 
 /* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
-"Td7-aD-5lo.title" = "Window";
-
-/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
-"Vdr-fp-XzO.title" = "Hide Others";
+"Td7-aD-5lo.title" = "윈도우";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
-"aUF-d1-5bR.title" = "Window";
-
-/* Class = "NSTextFieldCell"; title = "KAKAO ID"; ObjectID = "bYN-kg-PNB"; */
-"bYN-kg-PNB.title" = "KAKAO ID";
-
-/* Class = "NSButtonCell"; title = "LOGIN"; ObjectID = "dE2-fx-FqE"; */
-"dE2-fx-FqE.title" = "LOGIN";
-
-/* Class = "NSSecureTextFieldCell"; placeholderString = "!Password1111"; ObjectID = "dbb-q3-9W2"; */
-"dbb-q3-9W2.placeholderString" = "!Password1111";
+"aUF-d1-5bR.title" = "윈도우";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
-"hz9-B4-Xy5.title" = "Services";
+"hz9-B4-Xy5.title" = "서비스";
+
+/* Class = "NSTextFieldCell"; title = "아래 웹뷰를 이용해 로그인해주세요."; ObjectID = "ryU-zr-fVc"; */
+"ryU-zr-fVc.title" = "아래 웹뷰를 이용해 로그인해주세요.";
 
 /* Class = "NSMenu"; title = "StoryNotifier"; ObjectID = "uQy-DD-JDr"; */
 "uQy-DD-JDr.title" = "StoryNotifier";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
-"wpr-3q-Mcd.title" = "Help";
+"wpr-3q-Mcd.title" = "도움말";
