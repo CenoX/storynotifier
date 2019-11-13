@@ -13,16 +13,12 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
     
     let webViewURL = URL(string: "https://accounts.kakao.com/weblogin/main_captcha?continue=https%3A%2F%2Fstory.kakao.com")!
     let notificationURL = URL(string: "https://story.kakao.com/a/notifications")!
-    
-    private var cookies = [HTTPCookie]()
         
     private var notifications = [KakaoStoryNotification]()
     private var lastNotification: KakaoStoryNotification?
     
     private var alertTimer = Timer()
-    
-    private let encryptKey = "cenoxStoryNotifierProject"
-    
+        
     @IBOutlet var webView: WebView!
     @IBOutlet weak private var loginButton: NSButton!
     
@@ -34,12 +30,6 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
         webView.policyDelegate = self
         DispatchQueue.main.async {
             self.webView.mainFrame.load(URLRequest(url: self.webViewURL))
-        }
-    }
-    
-    override var representedObject: Any? {
-        didSet {
-            // Update the view, if already loaded.
         }
     }
 

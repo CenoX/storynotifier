@@ -47,7 +47,7 @@ extension String {
 
 extension FileManager {
     
-    func createApplicationSupport() {
+    func createSupportFolder() {
         let appSupportURL = self.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
         let vanilla = appSupportURL.appendingPathComponent("StoryNotifier")
         if !self.fileExists(atPath: vanilla.path) {
