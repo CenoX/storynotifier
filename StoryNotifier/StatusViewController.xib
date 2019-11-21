@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14868" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -73,7 +73,7 @@
                     <rect key="frame" x="18" y="176" width="380" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="면책조항" id="2lw-9d-C8l">
-                        <font key="font" size="12" name=".AppleSDGothicNeoI-Medium"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -83,7 +83,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="FwG-q4-s62">
                         <font key="font" metaFont="miniSystem"/>
-                        <mutableString key="title">DEVELOPED BY ByeongSu Kang
+                        <string key="title">DEVELOPED BY ByeongSu Kang
 ORIGINAL PROJECT STARTED BY REFLECTION*
 
 Copyright 2019 ByeongSu Kang. All rights reserved.
@@ -92,7 +92,7 @@ ByeongSu Kang은 Kakao Corp. 와 제휴하지 않았으며, 어떠한 관계도 
 ByeongSu Kang은 사용자 또는 제3자에 대해 어떠한 책임도 지지 않습니다.
 
 Kakao의 trademarks 정책은,
-https://developer.kakao.com/policies/trademark 를 참고하십시오.</mutableString>
+https://developer.kakao.com/policies/trademark 를 참고하십시오.</string>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

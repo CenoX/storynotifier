@@ -18,9 +18,11 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
     private var lastNotification: KakaoStoryNotification?
     
     private var alertTimer = Timer()
+    
+    private var viewLoadLock = false
+    private var alertLock = false
         
     @IBOutlet var webView: WebView!
-    @IBOutlet weak private var loginButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +30,17 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
         // Do any additional setup after loading the view.
         webView.frameLoadDelegate = self
         webView.policyDelegate = self
-        DispatchQueue.main.async {
-            self.webView.mainFrame.load(URLRequest(url: self.webViewURL))
-        }
     }
-
-    @IBAction private func login(sender: NSButton) {
-        print(webView.mainFrameURL as Any)
+    
+    override func viewDidAppear() {
+        
+        if !viewLoadLock {
+            DispatchQueue.main.async {
+                self.webView.mainFrame.load(URLRequest(url: self.webViewURL))
+            }
+            viewLoadLock = true
+        }
+        
     }
     
     func webView(_ sender: WebView!, didStartProvisionalLoadFor frame: WebFrame!) {
@@ -44,8 +50,11 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, WebFra
     func webView(_ sender: WebView!, didFinishLoadFor frame: WebFrame!) {
         if webView.mainFrameURL == "https://story.kakao.com/" {
             print(webView.mainFrameURL as Any)
-            self.view.window?.close()
-            self.startReceiveAlert()
+            if !alertLock {
+                self.view.window?.close()
+                self.startReceiveAlert()
+                alertLock = true
+            }
         }
     }
     
